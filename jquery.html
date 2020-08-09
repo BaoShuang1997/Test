@@ -5,11 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./js/jquery.js"></script>
+
+    <style>
+        #d1 {
+            width: 300px;
+            height: 30px;
+            border: 1px black solid;
+        }
+
+        .div {
+            background-color: coral;
+        }
+    </style>
 </head>
 
-<body>
 
+<body>
+    <div id="d1" title="hello" class="div1"></div>
+    <button id="b1">按钮</button>
+    <ul>
+        <li class="l1">111</li>
+        <li class="l2">222</li>
+        <li class="l1">333</li>
+        <li><span class="sl">444</span> </li>
+        <li>555</li>
+    </ul>
+    <input type="text" id="inp">
 </body>
+
+<script src="./js/jquery.js"></script>
+<script>
+    $(function () {
+        // $("#d1").attr({
+        //     title: 'titleaaa',
+        //     class: 'div',
+        // });
+
+        $("#d1").attr("title", "titleaba");
+        // $("#d1").css("backgroundColor", 'red');
+        $("#b1").click(function () {
+            alert("点击");
+        });
+        //
+        var l = $(".l1").html();
+        console.log(l);
+
+        var inp = $("#inp").val("233");
+        console.log(inp.val());
+        // $("li").filter(".l1").css("backgroundColor", "red");
+        // $("li").not(".l1").css("backgroundColor", "yellow");
+        $("li").has(".sl").css("backgroundColor", "blue");
+    });
+
+</script>
+
 
 </html>
