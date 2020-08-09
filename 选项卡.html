@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 600px;
+            height: 600px;
+        }
+
+        #div1 button {
+            width: 80px;
+            height: 30px;
+            background-color: gray;
+            color: white;
+            margin: 10px 10px 0 10px;
+
+        }
+
+        #div1 .active {
+            background-color: orange;
+            color: black;
+        }
+
+        #div1 .box {
+            width: 320px;
+            height: 300px;
+            border: 1px solid black;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <button class="active">选项1</button>
+        <button>选项2</button>
+        <button>选项3</button>
+        <div class="box" style="display: block;">选项一亿亿亿亿亿亿亿亿亿亿亿亿亿亿亿亿iiuiui独立速度就会发动军事立刻返回啦，的时间看了就卡了设计的拉开圣诞节拉开圣诞节</div>
+        <div class="box">选项二亿亿亿亿亿亿亿亿亿亿亿亿亿亿亿亿iiuiui独立速度就会发动军事立刻返回啦，的时间看了就卡了设计的拉开圣诞节拉开圣诞节</div>
+        <div class="box">选项三亿亿亿亿亿亿亿亿亿亿亿亿亿亿亿亿iiuiui独立速度就会发动军事立刻返回啦，的时间看了就卡了设计的拉开圣诞节拉开圣诞节</div>
+    </div>
+
+</body>
+<script src="./js/jquery.js"></script>
+<script>
+    // var getDiv = $("#div1");
+    var btns = $("#div1").find("button");
+    var zdiv = $("#div1").find("div");
+
+    btns.click(function () {
+
+        btns.attr("class", '');
+        zdiv.css("display", 'none');
+
+        $(this).attr("class", 'active');
+        zdiv.eq($(this).index()).css("display", 'block')
+    })
+
+
+    // for (var i = 0; i < btns.length; i++) {
+    //     btns[i].index = i;
+    //     btns[i].onclick = function () {
+    //         for (var j = 0; j < btns.length; j++) {
+    //             btns[j].className = '';
+    //             zdiv[j].style.display = 'none';
+    //         }
+    //         zdiv[this.index].style.display = 'block';
+    //         this.className = "active";
+    //     }
+    // }
+</script>
+
+</html>
